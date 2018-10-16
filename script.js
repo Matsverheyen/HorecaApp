@@ -12,7 +12,6 @@ const BIERPRIJS = 3.50;
 const WIJNPRIJS = 3.50;
 const FRISPRIJS = 2.00;
 const BITTERBALLENPRIJS = 0.35;
-var x = 0;
 
 orderDrink();
 
@@ -83,11 +82,10 @@ function receipt() {
   var total = fris + bier + wijn + bitterballen;
   var bierPrice = bier * BIERPRIJS;
   var wijnPrice = wijn * WIJNPRIJS;
-  var frisPrice = fris * FRISPRIJS
+  var frisPrice = fris * FRISPRIJS;
   var bitterballenPrice = bitterballen * BITTERBALLENPRIJS;
   var totalPrice = bitterballenPrice + wijnPrice + bierPrice + frisPrice;
   $(document).ready(function () {
-    var ul = $('#list').val();
     if (bier != 0) {
       $('#list').append('<li>' + bier + ' Bier: €' + bierPrice.toFixed(2) + '</li>');
     }
