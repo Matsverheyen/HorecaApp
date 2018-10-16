@@ -10,8 +10,7 @@ function orderDrink() {
   switch (order) {
     case 'fris':
       x = window.prompt(`Hoeveel ${order} wilt u bestellen?`);
-      var y = parseInt(x);
-      fris += x;
+      fris += parseInt(x);
       if (window.confirm('Wil je nog iets bestellen?')) {
           orderDrink();
         } else {
@@ -21,8 +20,7 @@ function orderDrink() {
 
         case 'bier':
         x1 = window.prompt(`Hoeveel ${order} wilt u bestellen?`);
-        var y1 = parseInt(x1);
-        bier += x1;
+        bier += parseInt(x1);
         console.log(bier);
         if (window.confirm('Wil je nog iets bestellen?')) {
             orderDrink();
@@ -33,8 +31,7 @@ function orderDrink() {
 
           case 'wijn':
           x2 = window.prompt(`Hoeveel ${order} wilt u bestellen?`);
-          var y2 = parseInt(x2);
-          wijn += x2;
+          wijn += parseInt(x2);
           console.log(wijn);
           if (window.confirm('Wil je nog iets bestellen?')) {
               orderDrink();
@@ -52,9 +49,9 @@ function orderDrink() {
         function receipt() {
           var total = fris + bier + wijn;
           $(document).ready(function () {
-            $('#fris').text('Fris: ' + fris);
-            $('#bier').text('Bier: ' + bier);
-            $('#wijn').text('Wijn: ' + wijn);
-            $('#total').text('Totaal: ' + total);
+            $('#fris').text('Fris: €' + fris.toFixed(2));
+            $('#bier').text('Bier: €' + bier.toFixed(2));
+            $('#wijn').text('Wijn: €' + wijn.toFixed(2));
+            $('#total').text('Totaal: €' + total.toFixed(2));
             });
           }
