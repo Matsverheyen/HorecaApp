@@ -49,9 +49,16 @@ function orderDrink() {
         function receipt() {
           var total = fris + bier + wijn;
           $(document).ready(function () {
-            $('#fris').text('Fris: €' + fris.toFixed(2));
-            $('#bier').text('Bier: €' + bier.toFixed(2));
-            $('#wijn').text('Wijn: €' + wijn.toFixed(2));
-            $('#total').text('Totaal: €' + total.toFixed(2));
+            var ul = $('#list').val();
+            if (bier != 0) {
+              $('#list').append('<li>Bier: €' + bier.toFixed(2) + '</li>');
+            }
+            if (wijn != 0) {
+              $('#list').append('<li>Wijn: €' + wijn.toFixed(2) + '</li>');
+            }
+            if (fris != 0) {
+              $('#list').append('<li>Fris: €' + fris.toFixed(2) + '</li>');
+            }
+            $('#list').append('<li>Totaal: €' + total.toFixed(2) + '</li>');
             });
           }
