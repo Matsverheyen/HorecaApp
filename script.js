@@ -83,23 +83,23 @@ function receipt() {
   var total = fris + bier + wijn + bitterballen;
   var bierPrice = bier * BIERPRIJS;
   var wijnPrice = wijn * WIJNPRIJS;
-  var FRISPRIJS = fris * FRISPRIJS;
+  var frisPrice = fris * FRISPRIJS
   var bitterballenPrice = bitterballen * BITTERBALLENPRIJS;
-  var totalPrice = bitterballenPrice + wijnPrice + bierPrice;
+  var totalPrice = bitterballenPrice + wijnPrice + bierPrice + frisPrice;
   $(document).ready(function () {
     var ul = $('#list').val();
     if (bier != 0) {
-      $('#list').append('<li>Aantal besteld: ' + bier + '  Bier: €' + bierPrice.toFixed(2) + '</li>');
+      $('#list').append('<li>' + bier + ' Bier: €' + bierPrice.toFixed(2) + '</li>');
     }
     if (wijn != 0) {
-      $('#list').append('<li>Aantal besteld: ' + wijn + '  Wijn: €' + wijnPrice.toFixed(2) + '</li>');
+      $('#list').append('<li>' + wijn + ' Wijn: €' + wijnPrice.toFixed(2) + '</li>');
     }
     if (fris != 0) {
-      $('#list').append('<li>Aantal besteld: ' + fris + '  Fris: €' + frisPrice.toFixed(2) + '</li>');
+      $('#list').append('<li>' + fris + '  Fris: €' + frisPrice.toFixed(2) + '</li>');
     }
     if (bitterballen != 0) {
-      $('#list').append('<li>Aantal besteld: ' + bitterballen + '  Bitterballen: €' + bitterballenPrice.toFixed(2) + '</li>');
+      $('#list').append('<li>' + bitterballen + '  Bitterballen: €' + bitterballenPrice.toFixed(2) + '</li>');
     }
-    $('#list').append('<li>Aantal besteld: ' + total + '  Totaal: €' + totalPrice.toFixed(2) + '</li>');
+    $('#list').append('<li>' + total + '  Totaal: €' + totalPrice.toFixed(2) + '</li>');
   });
 }
