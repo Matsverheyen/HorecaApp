@@ -3,15 +3,6 @@ var wijn = 0;
 var bier = 0;
 var bitterballen = 0;
 var aantal = 0;
-var frisPrice = 0;
-var wijnPrice = 0;
-var bierPrice = 0;
-var bitterballenPrice = 0;
-var totalprice = 0;
-const BIERPRIJS = 3.50;
-const WIJNPRIJS = 3.50;
-const FRISPRIJS = 2.00;
-const BITTERBALLENPRIJS = 0.35;
 
 orderDrink();
 
@@ -79,6 +70,10 @@ function orderDrink() {
 }
 
 function receipt() {
+  const BIERPRIJS = 3.50;
+  const WIJNPRIJS = 3.50;
+  const FRISPRIJS = 2.00;
+  const BITTERBALLENPRIJS = 0.35;
   var total = fris + bier + wijn + bitterballen;
   var bierPrice = bier * BIERPRIJS;
   var wijnPrice = wijn * WIJNPRIJS;
