@@ -3,9 +3,6 @@ var wijn = 0;
 var bier = 0;
 var bitterballen = 0;
 var aantal = 0;
-
-orderDrink();
-
 function orderDrink() {
   var order = window.prompt('Welke bestelling wilt u toevoegen?', 'Fris | Bier | Wijn | Bitterballen').toLocaleLowerCase();
   switch (order) {
@@ -18,7 +15,6 @@ function orderDrink() {
         receipt();
       }
       break;
-
     case 'bier':
       x1 = window.prompt(`Hoeveel ${order} wilt u bestellen?`);
       bier += parseInt(x1);
@@ -28,7 +24,6 @@ function orderDrink() {
         receipt();
       }
       break;
-
     case 'wijn':
       x2 = window.prompt(`Hoeveel ${order} wilt u bestellen?`);
       wijn += parseInt(x2);
@@ -38,7 +33,6 @@ function orderDrink() {
         receipt();
       }
       break;
-
     case 'bitterballen':
       x3 = window.prompt(`Hoeveel ${order} wilt u bestellen?`, '8 | 16');
       if (x3 == 8) {
