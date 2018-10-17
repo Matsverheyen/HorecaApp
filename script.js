@@ -3,58 +3,41 @@ var wijn = 0;
 var bier = 0;
 var bitterballen = 0;
 var aantal = 0;
+
 function orderDrink() {
-  var order = window.prompt('Welke bestelling wilt u toevoegen?', 'Fris | Bier | Wijn | Bitterballen').toLocaleLowerCase();
+  var order = window.prompt('Welke bestelling wilt u toevoegen?', 'Fris | Bier | Wijn | Bitterballen | stop').toLocaleLowerCase();
   switch (order) {
     case 'fris':
       x = window.prompt(`Hoeveel ${order} wilt u bestellen?`);
       fris += parseInt(x);
-      if (window.confirm('Wil je nog iets bestellen?')) {
-        orderDrink();
-      } else {
-        receipt();
-      }
+      orderDrink();
       break;
     case 'bier':
       x1 = window.prompt(`Hoeveel ${order} wilt u bestellen?`);
       bier += parseInt(x1);
-      if (window.confirm('Wil je nog iets bestellen?')) {
-        orderDrink();
-      } else {
-        receipt();
-      }
+      orderDrink();
       break;
     case 'wijn':
       x2 = window.prompt(`Hoeveel ${order} wilt u bestellen?`);
       wijn += parseInt(x2);
-      if (window.confirm('Wil je nog iets bestellen?')) {
-        orderDrink();
-      } else {
-        receipt();
-      }
+      orderDrink();
       break;
     case 'bitterballen':
       x3 = window.prompt(`Hoeveel ${order} wilt u bestellen?`, '8 | 16');
       if (x3 == 8) {
         aantal += 8;
-        bitterballen += parseInt(aantal);
-        if (window.confirm('Wil je nog iets bestellen?')) {
-          orderDrink();
-        } else {
-          receipt();
-        }
+        orderDrink();
       } else if (x3 == 16) {
         aantal += 16;
         bitterballen += parseInt(aantal);
-        if (window.confirm('Wil je nog iets bestellen?')) {
-          orderDrink();
-        } else {
-          receipt();
-        }
+        orderDrink();
       } else {
         window.alert('Geen geldige keuze!');
         orderDrink();
       }
+      break;
+    case 'stop':
+      receipt();
       break;
     default:
       window.alert('Geen geldige keuze!');
